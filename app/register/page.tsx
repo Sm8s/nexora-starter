@@ -1,43 +1,28 @@
 'use client';
 import { useState } from 'react';
-import { getSupabase } from '@/lib/supabaseClient';
+import { supabase } from '@/lib/supabaseClient';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function RegisterPage() {
-  const supabase = getSupabase();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  if (!supabase) {
-    return (
-      <div className="max-w-md mx-auto card">
-        <h2 className="text-xl font-semibold mb-2">Account erstellen</h2>
-        <p className="text-sm opacity-80">
-          Supabase-ENV ist nicht gesetzt. Bitte setze in Netlify:
-        </p>
-        <pre className="text-xs bg-black/40 p-3 rounded-lg mt-2">
-{`NEXT_PUBLIC_SUPABASE_URL=https://<projekt>.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=<anon_key>`}
-        </pre>
-        <p className="text-sm opacity-70 mt-2">Danach neu deployen.</p>
-        <div className="mt-4">
-          <Link href="/login" className="text-sm underline">Zurück zum Login</Link>
-        </div>
-      </div>
-    );
-  }
+  const router = useRouter();
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null); setLoading(true);
-    const { error } = await supabase.auth.signUp({ email, password, options: { data: { name } } });
+    const { data, error } = await supabase.auth.signUp({
+      email, password,
+      options: { data: { name } }
+    });
     setLoading(false);
     if (error) return setError(error.message);
     alert('Bestätigungslink gesendet. Bitte E-Mail prüfen.');
-    location.href = '/login';
+    router.push('/login');
   };
 
   return (
