@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { getSupabase } from '@/lib/supabaseClient';
+import { supabase } from '@/lib/supabaseClient';
 import NxCard from '@/components/NxCard';
 import NxProgress from '@/components/NxProgress';
 
@@ -13,7 +13,6 @@ type Summary = {
 }
 
 export default function HomeAuthed({ email, role, name }:{ email:string, role?:string|null, name?:string|null }){
-  const supabase = getSupabase();
   const [sum, setSum] = useState<Summary>({ tasksTotal: 0, tasksDone: 0, myDrafts: 0, unreadNotifications: 0 });
 
   useEffect(() => {
