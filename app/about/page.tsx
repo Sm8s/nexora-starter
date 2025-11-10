@@ -1,0 +1,1 @@
+export default function Page(){return <div className='card'>Über mich (Stub)</div>}

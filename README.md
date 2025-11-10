@@ -47,3 +47,17 @@ pnpm dev
 - Statt eines eigenen `users`-Tables nutzt dieses Schema **`auth.users` (UUID)**.
 - Öffentliche Profildaten liegen in `public.profiles` (1:1 zu `auth.users`).
 - Alle *_user_id / author_id Spalten referenzieren `auth.users(id)`.
+
+
+## Admin schützen & ersten Admin anlegen
+- `/admin/*` ist per Middleware geschützt (Login + Rolle `admin`).
+- Ersten Admin lokal anlegen:
+```bash
+npm i -D ts-node
+SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... npm run create-admin
+```
+- Oder im Supabase Dashboard User anlegen und in `profiles` Rolle auf `admin` setzen.
+
+## Navigation
+- Globale Navigation (`components/Nav.tsx`) ist auf allen Seiten sichtbar.
+- Keine Links oder Hinweise zum Admin-Bereich im UI.
