@@ -1,2 +1,0 @@
-USE c_portfolio;
-ALTER TABLE pages ADD COLUMN IF NOT EXISTS deleted_at DATETIME NULL;
