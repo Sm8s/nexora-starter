@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Logo from '@/components/Logo'
 import AuthMenu from '@/components/AuthMenu'
+import EasterEggLogo from '@/components/EasterEggLogo'
 
 
 export const metadata: Metadata = {
